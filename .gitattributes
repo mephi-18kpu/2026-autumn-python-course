@@ -1,0 +1,32 @@
+# Единые переводы строк для текстовых файлов
+* text=auto eol=lf
+
+# Двоичные изображения и документы
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+
+# Архивы
+*.zip binary
+*.7z binary
+*.rar binary
+
+# Скомпилированные файлы и образы прошивок
+*.o binary
+*.obj binary
+*.a binary
+*.lib binary
+*.so binary
+*.dll binary
+*.exe binary
+*.elf binary
+*.bin binary
