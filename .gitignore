@@ -28,39 +28,6 @@ htmlcov/
 dist/
 *.egg-info/
 
-# C, C++ и микроконтроллеры
-build/
-cmake-build-*/
-CMakeFiles/
-CMakeCache.txt
-compile_commands.json
-.pio/
-*.o
-*.obj
-*.a
-*.lib
-*.so
-*.dll
-*.exe
-*.elf
-*.hex
-*.bin
-
-# 3D-моделирование и инженерные расчёты
-
-# SolidWorks
-~$*.sldprt
-~$*.sldasm
-~$*.slddrw
-*.swbak
-
-# Blender
-*.blend[0-9]*
-blendcache_*/
-
-# COMSOL
-*.mph.lock
-
 # Временные файлы и журналы
 *.log
 *.tmp
