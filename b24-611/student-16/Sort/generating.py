@@ -29,4 +29,4 @@ def bubble_sort(values: list[int]) -> None:
         for start_i in range(0, len(values)-1, 1):
             if values[start_i] > values[start_i+1]:
                 values[start_i], values[start_i+1] = (values[start_i + 1], values[start_i])
-                
+
