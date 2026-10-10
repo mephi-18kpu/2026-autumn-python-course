@@ -1,7 +1,8 @@
+""" Содержит функции для создания списка со случайными значениями."""
 # System imports
 import random
 import time
-from _collections_abc import Callable
+from collections.abc import Callable
 
 # External imports
 
@@ -9,10 +10,43 @@ from _collections_abc import Callable
 
 #############################################
 
+def read_generation_parameters() -> tuple[int, int, int]:
+    """Считывает количество элементов и границы диапозона."""
+    count = int(input("Количество элементов: "))
+    minimum_value = int(input("Минимальное значение: "))
+    maximum_value = int(input("Максимальное значение: "))
+    if count < 0:
+        raise ValueError("Количество элементов не может быть отрицательным.")
+
+    if minimum_value > maximum_value:
+        raise ValueError("Минимальное значение больше максимального.")
+
+    return count, minimum_value, maximum_value
+
 def generate_values(
     count: int,
     minimum_value: int,
     maximum_value: int,
 ) -> list[int]:
     """ Создает список случайных чисел"""
+    if count < 0:
+        raise ValueError("Количество элементов не может быть отрицательным.")
 
+    if minimum_value > maximum_value:
+        raise ValueError("Минимальное значение больше максимального.")
+
+    return [
+        random.randint(minimum_value, maximum_value)
+        for _ in range(count)
+    ]
+
+def measure_execution_time(
+    function: Callable[..., object],
+    *args:object,
+) -> tuple[object, float]:
+    """Вызывает функцию и измеряет время выполнения"""
+    start_time = time.time()
+    result = function(*args)
+    stop_time = time.time()
+
+    return result, stop_time - start_time
