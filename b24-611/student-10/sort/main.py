@@ -1,43 +1,19 @@
-# System imports
-import random
-import time
-from collections.abc import Callable
+from generation import *
+from bubble_sort import bubble_sort
+from sort_timer import *
+def main():
+    ...
+    print("начало сортитровки\n")
 
-# External imports
+    count, min_val, max_val = read_generation_parameters()
 
-# User imports
+    list = generate_values(count, min_val, max_val)
 
+    print(f"исходный список: {list}\n")
 
-def read_generation_parameters() -> tuple[int, int, int]:
+    result, execution_time = measure_execution_time(bubble_sort(list))
 
-    count = int(input("кол-во эл_ов"))
-    minimum_value = int(input("мин значение"))
-    maximum_value = int(input("макс значение"))
+    print(f"отсртированный список: {list}\n")
+    print(f"время сортировки: {execution_time}\n, сек")
 
-    if count < 0:
-        raise ValueError("кол-во эл-ов не может быть <0")
-
-    if minimum_value > maximum_value:
-        raise ValueError("мин знач не может быть > макс знач")
-    return count, minimum_value, maximum_value
-
-
-def generate_values(
-
-    count: int,
-    minimum_value: int,
-    maximum_value: int,
-
-) -> list[int]:
-
-    if count < 0:
-        raise ValueError("кол-во эл-ов не может быть < 0")
-    if minimum_value > maximum_value:
-        raise ValueError("мин знач не может быть > макс знач")
-
-    return [
-
-        random.randint(minimum_value, maximum_value)
-        for _ in range(count)
-
-    ]
+main()
