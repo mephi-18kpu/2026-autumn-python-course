@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="650" viewBox="0 0 1080 650" role="img" aria-labelledby="title description">
+  <title id="title">Как растёт число операций</title>
+  <desc id="description">Рост функций 1, log2(n+1), n, n log2(n+1) и n в квадрате для длин списка от 1 до 64. Вертикальная шкала логарифмическая.</desc>
+  <rect width="1080" height="650" fill="#ffffff"/>
+  <text x="68" y="55" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#172033">Как растёт число операций</text>
+  <text x="68" y="85" font-family="Arial, sans-serif" font-size="17" fill="#475569">Конкретные функции, вертикальная шкала логарифмическая</text>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <path d="M130 100H780 M130 166.7H780 M130 233.3H780 M130 300H780 M130 366.7H780 M130 433.3H780 M130 500H780"/>
+    <path d="M202.2 100V500 M284.8 100V500 M449.8 100V500 M780 100V500"/>
+  </g>
+  <path d="M130 100V500H780" fill="none" stroke="#334155" stroke-width="2"/>
+  <g fill="#475569" font-family="Arial, sans-serif" font-size="15" text-anchor="end">
+    <text x="115" y="105">4096</text><text x="115" y="172">1024</text><text x="115" y="239">256</text><text x="115" y="305">64</text><text x="115" y="372">16</text><text x="115" y="439">4</text><text x="115" y="505">1</text>
+  </g>
+  <g fill="#475569" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+    <text x="130" y="527">1</text><text x="202.2" y="527">8</text><text x="284.8" y="527">16</text><text x="449.8" y="527">32</text><text x="780" y="527">64</text>
+  </g>
+  <text x="455" y="565" fill="#334155" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">n — длина списка</text>
+  <text x="32" y="300" fill="#334155" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" transform="rotate(-90 32 300)">Условное число операций</text>
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M130 500H780" stroke="#64748b"/>
+    <path d="M130 500 L140.3 477.9 L161 459.5 L202.2 444.5 L284.8 432.3 L367.3 426.2 L449.8 422.2 L614.9 417 L780 413.7" stroke="#0f766e"/>
+    <path d="M130 500 L140.3 466.7 L161 433.3 L202.2 400 L284.8 366.7 L367.3 347.2 L449.8 333.3 L614.9 313.8 L780 300" stroke="#2563eb"/>
+    <path d="M130 500 L140.3 444.5 L161 392.8 L202.2 344.5 L284.8 299 L367.3 273.3 L449.8 255.5 L614.9 230.9 L780 213.7" stroke="#b45309"/>
+    <path d="M130 500 L140.3 433.3 L161 366.7 L202.2 300 L284.8 233.3 L367.3 194.3 L449.8 166.7 L614.9 127.7 L780 100" stroke="#be185d"/>
+  </g>
+  <rect x="815" y="116" width="220" height="252" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="838" y="149" fill="#172033" font-family="Arial, sans-serif" font-size="18" font-weight="700">Функции</text>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#172033" stroke-width="4" stroke-linecap="round">
+    <line x1="838" y1="184" x2="875" y2="184" stroke="#64748b"/><text x="890" y="190">1</text>
+    <line x1="838" y1="221" x2="875" y2="221" stroke="#0f766e"/><text x="890" y="227">log₂(n+1)</text>
+    <line x1="838" y1="258" x2="875" y2="258" stroke="#2563eb"/><text x="890" y="264">n</text>
+    <line x1="838" y1="295" x2="875" y2="295" stroke="#b45309"/><text x="890" y="301">n log₂(n+1)</text>
+    <line x1="838" y1="332" x2="875" y2="332" stroke="#be185d"/><text x="890" y="338">n²</text>
+  </g>
+  <text x="68" y="612" fill="#475569" font-family="Arial, sans-serif" font-size="15">Каждая следующая горизонтальная линия соответствует увеличению значения в 4 раза.</text>
+</svg>
