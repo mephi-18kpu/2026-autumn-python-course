@@ -5,7 +5,7 @@ from collections.abc import Callable
 
 # User imports
 from generate_listing import generate_value, read_generation_parametrs
-from sort_function import bubble_sort
+from sort_function import bubble_sort, shaker_sort, gnome_sort
 
 #############################################
 
@@ -20,7 +20,7 @@ def main() -> None:
     count, max_value, min_value = read_generation_parametrs()
     value = generate_value(count, max_value, min_value)
     print(value)
-    sort_time = measure_execution_time(bubble_sort, value)
+    sort_time = measure_execution_time(gnome_sort, value)
     print(value,"время: ", sort_time)
 
 
