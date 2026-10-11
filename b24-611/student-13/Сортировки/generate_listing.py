@@ -1,6 +1,7 @@
 #System imports
 import random
 import time
+
 # External imports
 
 # User imports
@@ -25,8 +26,7 @@ def generate_value(count: int, max_value: int, min_value: int) -> list[int]:
     if max_value < min_value:
         raise ValueError("Максимальный элемент меньше минимального")
 
-    listing = list[]
-
-    for x in range(count):
-        listing[x - 1] = random.randint(min_value, max_value)
-    return list
+    return [
+        random.randint(min_value, max_value)
+        for _ in range(count)
+    ]
