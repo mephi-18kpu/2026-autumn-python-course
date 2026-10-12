@@ -1,6 +1,6 @@
 from generation import read_generation_parameters, generate_values
-from sort import bubble_sort
-import time
+from collections.abc import Callable
+import time, sort, search
 def measure_execution_time(
     function: Callable[..., object],
     *args: object,
@@ -22,7 +22,8 @@ def measure_execution_time(
 def main():
     parameters = read_generation_parameters()
     output = generate_values(parameters[0],parameters[1],parameters[2])
+    sort.shell_sort(output)
     print(output)
-    print(measure_execution_time(bubble_sort, output))
+    #print(measure_execution_time(sort.stupid_sort, output))
     return 0
 main()
