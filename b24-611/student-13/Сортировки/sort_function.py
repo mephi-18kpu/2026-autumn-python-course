@@ -6,6 +6,7 @@
 
 #############################################
 
+<<<<<<< Updated upstream
 def bubble_sort(values: list[int]) -> None:
     for end_index in range(len(values) - 1, 0, -1):
         for index in range(end_index):
@@ -44,3 +45,10 @@ def gnome_sort(values: list[int]) -> None:
         if index < 0:
             index = 1
 
+=======
+def bubble_sort(listing: list) -> None:
+    for x in range(len(listing) -1, 0, -1):
+        for y in range(x):
+            if listing[y] > listing[y + 1]:
+                listing[y], listing[y + 1] = listing[y + 1], listing[y]
+>>>>>>> Stashed changes
