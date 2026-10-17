@@ -9,6 +9,7 @@ Desktop.ini
 *.swp
 *.swo
 *~
+.obsidian
 
 # Локальные настройки и секреты
 .env
