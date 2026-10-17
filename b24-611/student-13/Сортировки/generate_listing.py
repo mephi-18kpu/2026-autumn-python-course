@@ -1,10 +1,6 @@
 #System imports
 import random
-<<<<<<< Updated upstream
-import time
 
-=======
->>>>>>> Stashed changes
 # External imports
 
 # User imports
