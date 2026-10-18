@@ -9,7 +9,7 @@ print(values, sin_values)
 
 
 fig, ax = plt.subplots(figsize=(16,9))
-ax.plot(values_rad, sin_values, label="шаыртг", color="tab:red")
+ax.plot(values_rad, sin_values, label="Sin_Values", color="tab:red")
 ax.grid(True)
 
 plt.show()
