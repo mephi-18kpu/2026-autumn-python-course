@@ -16,12 +16,11 @@ fig, ax = plt.subplots(figsize=(12, 6))
 ax.plot(angles, np.cos(radians), label="Косинус", color="tab:green")
 ax.plot(angles, np.sin(radians), label="Синус", color="tab:red")
 
-for i in np.sin(radians):
-    if i != 0:
+#sinus = np.sin(radians)[np.sin(radians) !=0 ]
+#cosinus = np.cos(radians)[np.cos(radians) !=0 ]
 
-
-#ax.plot(angles, np.sin(radians) / np.cos(radians), label="Тангентс", color="tab:blue")
-#ax.plot(angles,  np.cos(radians) / np.sin(radians), label="Котангентс", color="tab:orange")
+#ax.plot(angles, sinus / cosinus, label="Тангентс", color="tab:blue")
+#ax.plot(angles,  cosinus / sinus, label="Котангентс", color="tab:orange")
 ax.set_xlabel("Угол, градусы")
 ax.set_ylabel("Значение функции")
 ax.set_title("Тригонометрические функции")
