@@ -15,8 +15,8 @@ def procces_regisration(
     admins: dict[str, str]
 ) -> None:
     """Запрос данных пользователя"""
-    login = input("Введите login")
-    password= input("Введите пароль")
+    login = input("Введите login:")
+    password= input("Введите пароль:")
 
     if register_user(users, admins, login, password):
         print(f"Пользователь {login} зареган")
@@ -36,7 +36,7 @@ def procces_login(
     if auth_status == STATUS_ADMIN_AUTH:
         print(f"Админ {login} в сети")
         for users_login, user_password in users.items():
-            print(f"Login: {login}, parol: {password}")
+            print(f"Login: {users_login}, parol: {user_password}")
 
     elif auth_status == STATUS_USER_AUTH:
         print(f"Zdarova {login}")
@@ -58,8 +58,10 @@ def main() -> None:
         elif menu_item == "2":
             procces_login(USERS, ADMINS)
         elif menu_item == "0":
-            procces_regisration(USERS, ADMINS)
+            print("Пока пока")
+            break
         else:
-            print("Error")
+            print("Я уже красный, культурно не получится")
 
-main()
+if __name__ == "__main__":
+    main()

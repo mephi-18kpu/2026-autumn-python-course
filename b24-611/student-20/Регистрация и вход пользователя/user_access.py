@@ -12,7 +12,7 @@ def register_user(
     """Функция регистрации нового пользователя"""
     if login in users or login in admins:
         return False
-    users [login]= password
+    users[login]= password
     return True
 
 def auth_account(
