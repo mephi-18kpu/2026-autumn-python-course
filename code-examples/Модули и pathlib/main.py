@@ -10,8 +10,8 @@ from other_file import calculate_average, get_good_scores
 #############################################
 
 
-print("Значение __name__ в main.py:", __name__)  # При прямом запуске: __main__.
-print("Значение __file__ в main.py:", __file__)  # Путь к main.py.
+print("Значение __name__ в first_task.py:", __name__)  # При прямом запуске: __main__.
+print("Значение __file__ в first_task.py:", __file__)  # Путь к first_task.py.
 
 entered_scores = input("Введите оценки через пробел: ")
 scores = [int(value) for value in entered_scores.split()]
