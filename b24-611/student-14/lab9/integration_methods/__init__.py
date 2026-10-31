@@ -21,7 +21,7 @@ from .rectangles import (
     integrate_midpoint_rectangles,
     integrate_right_rectangles,
 )
-from .simpson import integrate_simpson
+# from .simpson import integrate_simpson
 from .trapezoid import integrate_trapezoid
 from .type_aliases import Integrand, IntegrationMethod
 
@@ -35,5 +35,5 @@ __all__: List[str] = [
     "integrate_midpoint_rectangles",
     "integrate_right_rectangles",
     "integrate_trapezoid",
-    "integrate_simpson",
+    # "integrate_simpson",
 ]
