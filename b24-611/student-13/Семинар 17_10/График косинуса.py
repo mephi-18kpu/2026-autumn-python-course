@@ -20,6 +20,7 @@ for i in np.sin(radians):
     if i != 0:
 
 
+
 #ax.plot(angles, np.sin(radians) / np.cos(radians), label="Тангентс", color="tab:blue")
 #ax.plot(angles,  np.cos(radians) / np.sin(radians), label="Котангентс", color="tab:orange")
 ax.set_xlabel("Угол, градусы")
