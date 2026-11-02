@@ -1,23 +1,31 @@
 from .type_aliases import Integrand
 from numpy.typing import NDArray
-from numpy import float64 as np
+import numpy as np
 
 def integrate_left_rectangles(
     nodes: NDArray[np.float64],
     function: Integrand,
 ) -> float:
-    ...
+    sumi = sum(function(x) for x in nodes[:-1])
+    h = nodes[1] - nodes[0]
+    return float(sumi*h)
+
 
 
 def integrate_right_rectangles(
     nodes: NDArray[np.float64],
     function: Integrand,
 ) -> float:
-    ...
+    sumi = sum(function(x) for x in nodes[1:])
+    h = nodes[1] - nodes[0]
+    return float(sumi * h)
 
 
 def integrate_midpoint_rectangles(
     nodes: NDArray[np.float64],
     function: Integrand,
 ) -> float:
-    ...
+    mid_nodes = (nodes[:-1] + nodes[1:]) / 2
+    sumi = sum(function(x) for x in mid_nodes)
+    h = nodes[1] - nodes[0]
+    return float(sumi * h)
