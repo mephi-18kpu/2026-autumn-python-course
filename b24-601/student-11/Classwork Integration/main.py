@@ -43,7 +43,7 @@ print(f"{names[0]}:   {results[0]}\n"
       f"{names[1]}:  {results[1]}\n"
       f"{names[2]}: {results[2]}\n"
       f"{names[3]}:               {results[3]}\n"
-      f"{names[4]}:        {results[4]}\n")
+      f"{names[4]}:         {results[4]}\n")
 
 errors = np.abs(results - real)
 
@@ -54,7 +54,9 @@ for j, name in enumerate(names):
 
 plt.xlabel("n")
 plt.ylabel("Погрешность")
+plt.title("График зависимости погрешности от задаваемой сетки")
 plt.legend()
 plt.grid(alpha=0.7)
+plt.tight_layout()
 plt.savefig(graph / "errors.png", dpi=150, bbox_inches="tight")
 plt.show()
