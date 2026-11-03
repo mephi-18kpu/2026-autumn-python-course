@@ -4,6 +4,7 @@ from typing import Callable
 # External imports
 import numpy as np
 from numpy.typing import NDArray
+from .type_aliases import Integrand
 
 # User imports
 
