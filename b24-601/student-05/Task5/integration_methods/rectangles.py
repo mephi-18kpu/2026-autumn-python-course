@@ -30,4 +30,9 @@ def integrate_midpoint_rectangles(
     nodes: NDArray[np.float64],
     function: Integrand,
 ) -> float:
-    ...
+    ans = 0
+    h = (nodes[1] - nodes[0])
+    for i in range(nodes.size - 1):
+        ans += function((nodes[i]+nodes[i+1])/2)
+    ans *= h
+    return ans
