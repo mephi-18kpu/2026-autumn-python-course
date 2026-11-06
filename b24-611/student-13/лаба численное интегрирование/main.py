@@ -14,7 +14,7 @@ from integration_methods import (
 
 #############################################
 
-f: Integrand = lambda x: np.exp(x)
+function: Integrand = lambda x: np.exp(x)
 I_exact = np.e - 1
 node_counts = [5, 11, 23, 47, 95, 191]
 
@@ -33,11 +33,11 @@ for n_nodes in node_counts:
     h = nodes[1] - nodes[0]
     h_values.append(h)
 
-    res_left = integrate_left_rectangles(nodes, f)
-    res_right = integrate_right_rectangles(nodes, f)
-    res_mid = integrate_midpoint_rectangles(nodes, f)
-    res_trap = integrate_trapezoid(nodes, f)
-    res_simp = integrate_simpson(nodes, f)
+    res_left = integrate_left_rectangles(nodes, function)
+    res_right = integrate_right_rectangles(nodes, function)
+    res_mid = integrate_midpoint_rectangles(nodes, function)
+    res_trap = integrate_trapezoid(nodes, function)
+    res_simp = integrate_simpson(nodes, function)
 
     err_left = abs(res_left - I_exact)
     err_right = abs(res_right - I_exact)
