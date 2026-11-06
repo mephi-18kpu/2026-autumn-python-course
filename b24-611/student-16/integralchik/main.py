@@ -1,14 +1,10 @@
-"""Основной скрипт для расчета интеграла и построения графика."""
 
-# Импорты из системы
 import math
 from typing import List
 
-# Импорты библиотек
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Импорты из нашего пакета (как в задании)
 from integration_methods import (
     Integrand,
     Integration_Method,
@@ -19,7 +15,6 @@ from integration_methods import (
     integrate_trapezoid,
 )
 
-# 1. Задаем функцию через lambda (теперь используем np.exp вместо math.exp)
 f: Integrand = lambda x: np.exp(x)
 EXACT_I: float = np.exp(1.0) - 1.0
 
