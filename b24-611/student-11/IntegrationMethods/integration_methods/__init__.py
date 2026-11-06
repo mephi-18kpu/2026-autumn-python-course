@@ -1,0 +1,39 @@
+"""Методы численного интегрирования на равномерной сетке.
+
+Экспортируемые объекты:
+    Integrand: Тип подынтегральной функции.
+    IntegrationMethod: Тип метода интегрирования.
+    integrate_left_rectangles: Метод левых прямоугольников.
+    integrate_midpoint_rectangles: Метод средних прямоугольников.
+    integrate_right_rectangles: Метод правых прямоугольников.
+    integrate_trapezoid: Метод трапеций.
+    integrate_simpson: Метод Симпсона.
+"""
+
+# System imports
+from typing import List
+
+# External imports
+
+# User imports
+from .rectangles import (
+    integrate_left_rectangles,
+    integrate_midpoint_rectangles,
+    integrate_right_rectangles,
+)
+from .simpson import integrate_simpson
+from .trapezoid import integrate_trapezoid
+from .type_aliases import Integrand, IntegrationMethod
+
+#############################################
+
+
+__all__: List[str] = [
+    "Integrand",
+    "IntegrationMethod",
+    "integrate_left_rectangles",
+    "integrate_midpoint_rectangles",
+    "integrate_right_rectangles",
+    "integrate_trapezoid",
+    "integrate_simpson",
+]
