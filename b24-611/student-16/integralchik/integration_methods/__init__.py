@@ -1,4 +1,6 @@
 
+from typing import List
+
 from .rectangles import (
  integrate_left_rectangles,
  integrate_midpoint_rectangles,
