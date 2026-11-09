@@ -1,3 +1,23 @@
+"""
+Ошибся с абсолютными импортами подмодулей,
+поэтому при запуске из корня репозитория (как
+и надо работать ошибка:
+
+D:\Tuition\2026-autumn-python-course\.venv\Scripts\python.exe D:\Tuition\2026-autumn-python-course\b24-601\student-01\homeworks\hw5\main.py
+Traceback (most recent call last):
+  File "D:\Tuition\2026-autumn-python-course\b24-601\student-01\homeworks\hw5\main.py", line 10, in <module>
+    from integration_methods import (
+    ...<7 lines>...
+    )
+  File "D:\Tuition\2026-autumn-python-course\b24-601\student-01\homeworks\hw5\integration_methods\__init__.py", line 9, in <module>
+    from homeworks.hw5.integration_methods.simpson import integrate_simpson
+ModuleNotFoundError: No module named 'homeworks'
+
+
+Если разобрал, что нейронка сделала, то норм
+
+"""
+
 import math
 from typing import Dict, List
 

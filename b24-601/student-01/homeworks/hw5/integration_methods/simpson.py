@@ -14,6 +14,7 @@ def integrate_simpson(
 ) -> float:
 
     if nodes.ndim != 1 or nodes.size < 3 or nodes.size % 2 == 0:
+        # Сообщение об ошибке вывести то какое-то надо
         raise ValueError(
         )
 
