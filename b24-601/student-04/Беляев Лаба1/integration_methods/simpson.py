@@ -11,6 +11,7 @@ def integrate_simpson(nodes: NDArray[np.float64], function: Integrand) -> float:
     f_0 = function(nodes[0])
     f_n = function(nodes[-1])
 
+    # Красиво
     sum_odd = np.sum([function(nodes[i]) for i in range(1, n, 2)])
     sum_even = np.sum([function(nodes[i]) for i in range(2, n, 2)])
 

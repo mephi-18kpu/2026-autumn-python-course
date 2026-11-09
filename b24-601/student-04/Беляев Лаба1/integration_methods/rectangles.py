@@ -2,6 +2,8 @@ import numpy as np
 from numpy.typing import NDArray
 from .type_aliases import Integrand
 
+# Со срезами молодец
+
 def integrate_left_rectangles(nodes: NDArray[np.float64], function: Integrand) -> float:
     """Метод левых прямоугольников."""
     h = nodes[1] - nodes[0]
@@ -15,5 +17,10 @@ def integrate_right_rectangles(nodes: NDArray[np.float64], function: Integrand) 
 def integrate_midpoint_rectangles(nodes: NDArray[np.float64], function: Integrand) -> float:
     """Метод средних прямоугольников."""
     h = nodes[1] - nodes[0]
+
+    #
+    # Тут так можно вычислять значение в средней точке, но если у тебя нет
+    # аналитической формы функции, то так делать нельзя
+    #
     midpoints = (nodes[:-1] + nodes[1:]) / 2.0
     return float(h * np.sum([function(m) for m in midpoints]))
