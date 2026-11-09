@@ -27,6 +27,7 @@ def run_experiment() -> None:
     steps: list[float] = []
     errors: dict[str, list[float]] = {name: [] for name in METHODS}
 
+    # Красивая табличка
     num_nodes_list = [2**k + 1 for k in range(2, 8)]
     header = f"{'N':>5} | {'h':>10} | " + " | ".join(f"{name:>14}" for name in METHODS)
     print(header)

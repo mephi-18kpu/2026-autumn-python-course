@@ -10,6 +10,7 @@ def integrate_trapezoid(
         raise ValueError("Для метода трапеций требуется не менее двух узлов.")
     
     h = nodes[1] - nodes[0]
+    # 0.5 вынеси за скобку то
     total_sum = 0.5 * function(nodes[0]) + 0.5 * function(nodes[-1])
     for i in range(1, len(nodes) - 1):
         total_sum += function(nodes[i])
