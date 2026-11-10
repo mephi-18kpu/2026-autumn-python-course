@@ -1,19 +1,17 @@
-from typing import List
-from integration_methods.rectangles import (
+from .type_aliases import Integrand, Nodes
+from .rectangles import (
     integrate_left_rectangles,
-    integrate_midpoint_rectangles,
     integrate_right_rectangles,
+    integrate_midpoint_rectangles,
 )
-from integration_methods.trapezoid import integrate_trapezoid
-from integration_methods.simpson import integrate_simpson
-from integration_methods.type_aliases import Integrand, IntegrationMethod
+from .trapezoid import integrate_trapezoid
+from .simpson import integrate_simpson
 
-__all__: List[str] = [
-    "Integrand",
-    "IntegrationMethod",
+__all__ = [
+    "Integrand", "Nodes",
     "integrate_left_rectangles",
-    "integrate_midpoint_rectangles",
     "integrate_right_rectangles",
+    "integrate_midpoint_rectangles",
     "integrate_trapezoid",
     "integrate_simpson",
 ]

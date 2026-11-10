@@ -1,11 +1,8 @@
-
 from typing import Callable
-
-
 import numpy as np
-from numpy.typing import NDArray
 
-
+# подынтегральная функция: одно число -> одно число
 Integrand = Callable[[float], float]
 
-IntegrationMethod = Callable[[NDArray[np.float64], Integrand], float]
+# массив узлов сетки
+Nodes = np.ndarray
