@@ -1,6 +1,6 @@
 import numpy as np
-# Не хватает импортов, у тебя NDArray и Integrand тут не определены
-# У меня из-за этого и не запускается твоя программа
+from numpy.typing import NDArray
+from .type_aliases import Integrand
 
 def integrate_left_rectangles(
     nodes: NDArray[np.float64],
