@@ -8,6 +8,14 @@ from numpy.typing import NDArray
 from .type_aliases import Integrand
 
 
+"""
+Если сетка будет неравномерной, то код уже работать не будет.
+Поэтому мб стоило брать исходный массив х и работать непосредственно
+с ним.
+
+Но я говорил, что сетка равномерная, так что ладно.
+"""
+
 def _step(nodes: NDArray[np.float64]) -> float:
     if nodes.ndim != 1 or nodes.size < 2:
         raise ValueError("Нужен одномерный массив минимум из двух узлов.")

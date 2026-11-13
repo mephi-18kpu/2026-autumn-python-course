@@ -15,6 +15,7 @@ def integrate_trapezoid(
     if nodes.ndim != 1 or nodes.size < 2:
         raise ValueError("Нужен одномерный массив минимум из двух узлов.")
 
+    # А что не через _step?
     h = float(nodes[-1] - nodes[0]) / (nodes.size - 1)
     values = [function(float(x)) for x in nodes]
     inner = math.fsum(values[1:-1])
