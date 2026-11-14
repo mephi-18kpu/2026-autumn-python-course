@@ -1,0 +1,5 @@
+def integrate_simpson(
+    nodes: NDArray[np.float64],
+    function: Integrand,
+) -> float:
+    ...

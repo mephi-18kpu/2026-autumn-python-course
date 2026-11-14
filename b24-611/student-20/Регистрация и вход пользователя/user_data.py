@@ -1,0 +1,14 @@
+USERS: dict[str, str]={
+    "user1": "password1",
+    "user2": "password2",
+    "user3": "password3",
+    "user4": "password4",
+    "user5": "password5",
+    "user6": "password6",
+    "user7": "password7",
+    "user8": "password8",
+}
+
+ADMINS: dict[str, str]={
+    "adminka": "secret"
+}
