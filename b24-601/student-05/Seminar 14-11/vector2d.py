@@ -79,6 +79,13 @@ class Vector2D:
         if not isinstance(other, Vector2D):
             raise TypeError(f"Математическое умножение Vector2D невозможно!")
         return self.x * other.x + self.y * other.y
-    
+
     def dot(self, other: "Vector2D") -> float|int:
         return self.__matmul__(other)
+if __name__ == "__main__":
+    vector_1 = Vector2D.from_points((1,1), (4,5))
+    vector_2 = Vector2D.from_points((-1,2), (3,0))
+    displacement = Vector2D(-4,6)
+    displacement["x"] = 3
+    print(vector_1 + displacement)
+    print(vector_1 @ vector_2)
