@@ -40,18 +40,57 @@ class Circle(Shape):
     def perimeter(self) -> float:
          return self.radius*2*pi
 
-n=input("Введите колиечство фигур")
-def calc_sum_perimeter(shapes: list[Shape]) -> float:
-        l=
-        for i in range(n):
-            t=input(f"Введите тип {n} фигуры")
-            d=input("Введите параметры фигуры (длина или радиус)")
-            d1=input("Введите параметры фигуры (ширина или 0, если circle)")
-            if t== "circle":
-                sh = Circle(float(d))
-            if t== "rectangle":
-                sh= Rectangle(float(d), float(d1))
-            l.append(sh.perimeter())
-        return (l)
+class Rectangle(Shape):
+    def __init__(self, wid: float, leng: float):
+        if (wid < 0)or(leng < 0):
+            raise ValueError("Стороны прямоугольника не могут быть отрицательными")
+        self.width = wid
+        self.length = leng
+    def __str__(self) -> str:
+        return (f"{super().__str__()}\n"
+                f"|length = {self.length}\n"
+                f"|width = {self.width}\n")
 
-print(f"Периметры фигур по порядку: {calc_sum_perimeter()}")
+    def area(self) -> float:
+        return self.length*self.width
+
+    def perimeter(self) -> float:
+        return (self.width+self.length)*2
+
+
+#shape = Rectangle(5, 2)
+
+#print(shape.area(), shape.perimeter())
+
+def create_list (l: list):
+    count=input("Введите количество элементов")
+    for i in range(int(count)):
+        elem=input("Введите элементы (тип формы для каждого)")
+        l.append(elem)
+    return l
+
+def params (l: list):
+    create_list(l)
+    par=[]
+    for i in range(len(forms)):
+        dl=int(input("Введите длину(радиус)"))
+        sh=int(input("Введите ширину(если окружность, введите 0)"))
+        par.append(dl)
+        par.append(sh)
+    return par
+
+forms=[]
+par=params(forms)
+
+for i in range (len(forms)):
+    if forms[i]=="Rectangle":
+        shape=Rectangle(par[i+i], par[i+i+1])
+        print(shape.area(), shape.perimeter())
+    elif forms[i]=="Circle":
+        shape = Circle(par[i+i])
+        print(shape.area(), shape.perimeter())
+    else:
+        print("Вашей формы нет в прграмме, проверьте написание на опечатки")
+
+
+
