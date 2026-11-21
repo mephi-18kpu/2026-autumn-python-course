@@ -1,14 +1,4 @@
-# System imports
-from abc import ABC, abstractmethod
-from math import cos, hypot, pi, sin
-from types import NotImplementedType
-
 import math
-
-# External imports
-import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.axes import Axes
 
 class Vector2D:
 
