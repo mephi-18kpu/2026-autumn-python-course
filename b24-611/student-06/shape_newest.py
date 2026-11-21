@@ -1,4 +1,5 @@
 #Гит не даёт редактировать файл shape.py, поэтому пришлось пересоздать
+from abc import ABC, abstractmethod
 import numpy as np
 
 
