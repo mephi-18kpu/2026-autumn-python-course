@@ -44,16 +44,18 @@ class Round(Shape):
         return (f"{super().__str__()}\n"
                 f"| radius = {self._width}\n")
 
+    @property
     def area(self) -> float|int:
         return self._radius * 3.14 * 2
 
+    @property
     def perimetr(self) -> float|int:
         return 3.14 * self._radius ** 2
 
 def caluclate_sum_perimetr(l: list[Shape]) -> float|int:
     values = []
     for i in l:
-        values.append(i.perimetr())
+        values.append(i.perimetr)
 
     print(sum(values))
     return sum(values)
@@ -63,6 +65,7 @@ def caluclate_sum_perimetr(l: list[Shape]) -> float|int:
 shape = Rectangle(2,5)
 list1 = [Rectangle(2,3),Round(9),Rectangle(2,4)]
 print(shape)
-print(shape.area())
-print(shape.perimetr())
+print(shape.area)
+print(shape.perimetr)
 caluclate_sum_perimetr(list1)
+
