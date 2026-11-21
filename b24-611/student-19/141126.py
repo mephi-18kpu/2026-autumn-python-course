@@ -1,16 +1,22 @@
-class Shape:
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
     def __init__(self):
         raise TypeError("ельзя напрям создавать экземпляры класса Shape")
+
 
     def __str__(self) -> str:
         return type(self).__name__
 
+    @abstractmethod
     def area(self) -> float|int:
         pass
 
+    @abstractmethod
     def perimeter(self) -> float:
         pass
 
+    @abstractmethod
     def scale(self, factor: float|int):
         pass
 
