@@ -81,3 +81,17 @@ class Vector2D:
 
     def dot(self, other: "Vector2D") -> float|int:
         return self.__matmul__(other)
+
+
+if __name__ == "__main__":
+    ras = Vector2D(10, 12)
+    dva = Vector2D.from_points((10, 15), (3, 19))
+
+    ras_or_dva = ras + dva
+    print(ras_or_dva, ras["x"], ras[-1])
+
+    ras[0] = 42
+    ras[1] = 67
+    print(ras * 4, ras["y"])
+
+    print(Vector2D.dot(ras, dva))
