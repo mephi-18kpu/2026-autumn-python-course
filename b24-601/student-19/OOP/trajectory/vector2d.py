@@ -55,7 +55,7 @@ class Vector2D:
         return index
 
     def __repr__(self) -> str:
-        return f"Vector2D (id = {id(self)}) with ._x = {self.x}, ._y = {self.y}"
+        return f"Vector2D ({self.x}, {self.y}) id = {id(self)}"
 
     def __add__(self, other: "Vector2D") -> "Vector2D":
         if not isinstance(other, Vector2D):
@@ -76,8 +76,13 @@ class Vector2D:
             raise TypeError(f"Expected Vector2D"
                             f"got {type(other).__name__}!")
         return self._x * other._x + self._y * other._y
+
     def dot(self, other: "Vector2D") -> float|int:
         return  self.__matmul__(other)
+
+    def __rmul__(self, scalar: float) -> "Vector2D | NotImplementedType":
+        """Вернуть вектор, умноженный на число слева."""
+        return self.__mul__(scalar)
 
 if __name__ == "__main__":
 
