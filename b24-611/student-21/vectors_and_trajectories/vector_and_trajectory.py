@@ -1,5 +1,6 @@
 import math
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod, abstractproperty, abstractclassmethod
+
 
 class Vector2D:
     DIMENSION = 2
@@ -18,6 +19,14 @@ class Vector2D:
 
     def __repr__(self) -> str:
         return f"Вектор2D({self._x}, {self._y})"
+
+    def __add__(self, other: "Vector2D") -> "Vector2D":
+        if not isinstance(other, Vector2D):
+            return NotImplemented
+        return Vector2D(self._x + other._x, self._y + other._y)
+
+    def __mul__(self, scalar: float) -> "Vector2D":
+        return Vector2D(self._x * scalar, self._y * scalar)
 
     def __rmul__(self, scalar: float) -> "Vector2D":
         return self.__mul__(scalar)
@@ -63,6 +72,13 @@ class Trajectory(ABC):
     def __call__(self, t: float) -> Vector2D:
         pass
 
+
+class TrajectoryFactory(ABC):
+    @abstractclassmethod
+    def from_console(cls):
+        pass
+
+
 #############
 class ParabolicTrajectory(Trajectory):
     def __init__(self, a: float, b: float, c: float) -> None:
@@ -74,7 +90,7 @@ class ParabolicTrajectory(Trajectory):
 
     def __call__(self, t: float) -> Vector2D:
         x = t
-        y = self.a * (t ** 2) + self.b * t + self.c
+        y = self.a * (t**2) + self.b *t + self.c
         return Vector2D(x, y)
 
 

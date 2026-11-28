@@ -1,6 +1,6 @@
 from vector_and_trajectory import HyperbolicTrajectory
 
-print("\n--- Задание 3 ---")
+
 right = HyperbolicTrajectory(a=3, b=2, branch=1)
 left = HyperbolicTrajectory(a=3, b=2, branch=-1)
 

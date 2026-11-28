@@ -1,7 +1,5 @@
 from vector_and_trajectory import ParabolicTrajectory
 
-print("\n--- Задание 2 ---")
-
 try:
     ParabolicTrajectory(0, 1, 2)
 except ValueError as e:

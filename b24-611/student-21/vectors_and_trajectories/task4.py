@@ -18,8 +18,6 @@ def plot_trajectory(trajectory: Trajectory, t_values: np.ndarray, ax=None, label
     return ax
 
 
-print("\n--- Задание 4 ---")
-
 
 t_parab = np.linspace(-2, 3, 100)
 parab = ParabolicTrajectory(1, -2, 3)
