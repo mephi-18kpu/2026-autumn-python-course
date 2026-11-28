@@ -3,7 +3,7 @@
 ## Примеры к занятию
 
 - [code-examples/Векторы и траектории в Python/vector_example.py](../code-examples/Векторы%20и%20траектории%20в%20Python/vector_example.py)
-- [code-examples/Векторы и траектории в Python/trajectories.py](../code-examples/Векторы%20и%20траектории%20в%20Python/trajectories.py)
+- [code-examples/Векторы и траектории в Python/trajectories.py](../b24-601/student-07/vectors_28/trajectories.py)
 
 ## Атрибуты класса и экземпляра
 
