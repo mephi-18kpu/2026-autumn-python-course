@@ -38,12 +38,12 @@ class Vector2d:
         return Vector2d(self._x+other._x, self._y+other._y)
 
     def     __mul__(self, other: float) -> "Vector2d":
-        if not isinstance(other, [int, float]):
+        if not isinstance(other, (int, float)):
             raise TypeError('Умножение возможно только со скалярами')
         return Vector2d(self._x*other, self._y*other)
 
     def __rmul__(self, other: float) -> "Vector2d":
-        return self.__mult__(other)
+        return self.__mul__(other)
 
     def     __matmul__(self, other: float) -> float:
         if not isinstance(other, [int, float]):
