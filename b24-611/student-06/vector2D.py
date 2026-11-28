@@ -41,7 +41,7 @@ class Vector2D:
             raise TypeError("Поддерживается только умножение на число")
         return Vector2D(self.x * scalar, self.y * scalar)
 
-    def __mul__(self, scalar: float|int):
+    def __rmul__(self, scalar: float|int):
         return self.__mul__(scalar)
 
     def __matmul__(self, other: "Vector2D") -> float:
@@ -74,10 +74,8 @@ class Vector2D:
         if isinstance(key, str):
             if key == "x":
                 self._x = value
-                return
             elif key == "y":
                 self._y = value
-                return
             raise KeyError(f"Запрашивается несуществующая координата {key}")
         if isinstance(key, int):
             index = self._normalize_index(key, Vector2D.DIMENSION)
@@ -92,10 +90,8 @@ class Vector2D:
         if index < 0:
             index += size
         if 0 <= index < size:
-            return index
-        raise IndexError(f"Выход за границы коллекции. index = {index}")
+            raise IndexError(f"Выход за границы коллекции. index = {index}")
+        return index
 
 if __name__ == "__main__":
-    vector_1 = Vector2D(2,5)
-    vector_2= Vector2D(2, 5)
-...
+    ...
