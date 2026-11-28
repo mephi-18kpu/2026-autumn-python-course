@@ -1,9 +1,9 @@
 """Прямолинейная траектория и её консольная фабрика."""
 
 # System imports
+from math import isfinite
 
 # External imports
-import numpy as np
 
 # User imports
 from vector2d import Vector2D
@@ -15,24 +15,13 @@ from .base import Trajectory, TrajectoryFactory
 class LinearTrajectory(Trajectory):
     """Прямая, заданная точкой и направлением."""
 
-    def __init__(
-        self,
-        start: Vector2D,
-        direction: Vector2D,
-        *,
-        t_values: np.ndarray | None = None,
-    ) -> None:
+    def __init__(self, start: Vector2D, direction: Vector2D) -> None:
         """Задать параметры прямой.
 
         Args:
             start: Положение при t = 0.
             direction: Изменение положения при увеличении t на единицу.
-            t_values: Шкала обхода траектории.
-
-        Raises:
-            ValueError: Шкала не одномерна.
         """
-        super().__init__(t_values=t_values)
         self._start: Vector2D = start
         self._direction: Vector2D = direction
 
@@ -44,8 +33,28 @@ class LinearTrajectory(Trajectory):
 class LinearTrajectoryFactory(TrajectoryFactory):
     """Создать прямую по начальной точке и направлению."""
 
-    def _create_trajectory(self) -> LinearTrajectory:
-        """Прочитать начальную точку и направление."""
-        start = self._read_vector("Начальная точка")
-        direction = self._read_vector("Направление")
-        return LinearTrajectory(start, direction)
+    def from_console(self) -> LinearTrajectory:
+        """Прочитать начальную точку и направление.
+
+        Returns:
+            Прямолинейная траектория.
+        """
+        while True:
+            try:
+                start = Vector2D(
+                    float(input("Начальная точка, x = ")),
+                    float(input("Начальная точка, y = ")),
+                )
+                if not (isfinite(start.x) and isfinite(start.y)):
+                    raise ValueError("Координаты начальной точки должны быть конечными числами.")
+
+                direction = Vector2D(
+                    float(input("Направление, x = ")),
+                    float(input("Направление, y = ")),
+                )
+                if not (isfinite(direction.x) and isfinite(direction.y)):
+                    raise ValueError("Компоненты направления должны быть конечными числами.")
+            except ValueError as error:
+                print(f"Введите параметры траектории заново. {error}")
+            else:
+                return LinearTrajectory(start, direction)

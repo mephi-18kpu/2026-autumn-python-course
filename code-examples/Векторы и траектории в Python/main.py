@@ -1,58 +1,12 @@
-"""Запросить параметры траекторий и построить их графики."""
+"""Самостоятельная работа по построению траекторий.
 
-# System imports
-
-# External imports
-import matplotlib.pyplot as plt
-from matplotlib.axes import Axes
-
-# User imports
-from trajectories import (
-    EllipticTrajectoryFactory,
-    LinearTrajectoryFactory,
-    Trajectory,
-    TrajectoryFactory,
-)
-
-#############################################
-
-
-def plot_trajectory(ax: Axes, trajectory: Trajectory, label: str) -> None:
-    """Построить траекторию по её шкале обхода.
-
-    Args:
-        ax: Область построения.
-        trajectory: Траектория с заданной шкалой обхода.
-        label: Подпись кривой в легенде.
-    """
-    points = list(trajectory)
-    x_values = [point.x for point in points]
-    y_values = [point.y for point in points]
-    ax.plot(x_values, y_values, label=label)
-
-
-def main() -> None:
-    """Создать прямую и эллипс из консольного ввода и построить их."""
-    factories: list[tuple[TrajectoryFactory, str]] = [
-        (LinearTrajectoryFactory(), "Прямая"),
-        (EllipticTrajectoryFactory(), "Эллипс"),
-    ]
-    trajectories: list[tuple[Trajectory, str]] = []
-    for factory, label in factories:
-        print(f"\nПараметры траектории «{label}»")
-        trajectories.append((factory.from_console(), label))
-
-    _, ax = plt.subplots()
-    for trajectory, label in trajectories:
-        plot_trajectory(ax, trajectory, label)
-
-    ax.set_xlabel("x")
-    ax.set_ylabel("y")
-    ax.set_aspect("equal", adjustable="box")
-    ax.grid(True)
-    ax.legend()
-    plt.show()
-
-
-if __name__ == "__main__":
-    main()
+1. Вызовите LinearTrajectoryFactory().from_console(), чтобы создать прямую
+   по начальной точке и направлению, введённым в консоли.
+2. Напишите общую функцию построения. Задайте в main.py диапазон значений t
+   и число точек. Для каждого t вызовите trajectory(t), соберите координаты
+   и передайте их в Matplotlib.
+3. Реализуйте эллипс и гиперболу вместе с фабриками в отдельных модулях
+   пакета trajectories. В каждой фабрике определите метод from_console().
+4. Подключите новые фабрики и постройте все три кривые общей функцией.
+   Сверьте точки с примерами из конспекта.
+"""

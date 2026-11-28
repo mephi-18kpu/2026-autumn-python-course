@@ -6,7 +6,6 @@
 
 # User imports
 from .base import Trajectory, TrajectoryFactory
-from .elliptic import EllipticTrajectory, EllipticTrajectoryFactory
 from .linear import LinearTrajectory, LinearTrajectoryFactory
 
 #############################################
@@ -16,6 +15,4 @@ __all__ = [
     "TrajectoryFactory",
     "LinearTrajectory",
     "LinearTrajectoryFactory",
-    "EllipticTrajectory",
-    "EllipticTrajectoryFactory",
 ]

@@ -1,7 +1,6 @@
 """Двумерный вектор и примеры операций с ним."""
 
 # System imports
-import operator
 from math import hypot
 from types import NotImplementedType
 
@@ -115,8 +114,10 @@ class Vector2D:
                 index = 1
             else:
                 raise KeyError(f"У вектора есть только компоненты x и y. Получен ключ {key!r}")
+        elif isinstance(key, int):
+            index = key
         else:
-            index = operator.index(key)
+            raise TypeError("Ключ должен быть целым индексом или именем компоненты")
         if index < 0:
             index += size
         if not 0 <= index < size:
