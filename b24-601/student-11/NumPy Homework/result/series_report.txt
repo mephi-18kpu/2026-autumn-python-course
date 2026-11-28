@@ -1,0 +1,6 @@
+sensor_a.txt: length=5, max=13.00, min=10.00, mean=11.60, std=1.02, above_mean=3
+sensor_b.txt: length=4, max=21.00, min=18.00, mean=19.50, std=1.12, above_mean=2
+sensor_c.txt: length=6, max=8.20, min=8.00, mean=8.10, std=0.08, above_mean=2
+sensor_d.txt: length=7, max=19.00, min=12.00, mean=15.57, std=2.44, above_mean=4
+Max mean value has sensor_b.txt: 19.5
+And min standard value has sensor_c.txt 0.08164965809277232
